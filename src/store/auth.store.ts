@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 interface AuthState {
-    status: 'authenticated' | 'unautheticated' | 'checking';
+    status: 'authenticated' | 'unauthenticated' | 'checking';
     token?: string;
     user?:{
         name: string;
@@ -29,7 +29,7 @@ export const useAuthStore = create<AuthState>()(( set ) => ({
         },
         logout:() => {
             set({
-                status: 'unautheticated',
+                status: 'unauthenticated',
                 token: undefined,
                 user: undefined,
             })
